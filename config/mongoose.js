@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// mongoose.set('strictQuery',true);
+ mongoose.set('strictQuery',true);
 // const dotenv = require('.env');
 //const DB =''
 // dotenv.config({ path: 'config/.env' });
@@ -19,9 +19,9 @@ const mongoose = require('mongoose');
 // }).catch((err) => console.log('no connection',err));
 
 // const DB = "mongodb://127.0.0.1:27017/placement_cell"
-const DB = 'mongodb+srv://vijaykumarcse22:BD7rWeK2FBPYkusW@placementapp.zp4kzxo.mongodb.net/'
+// const DB = 'mongodb+srv://vijaykumarcse22:BD7rWeK2FBPYkusW@placementapp.zp4kzxo.mongodb.net/'
 
-mongoose.connect(DB, {
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
